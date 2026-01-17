@@ -11,9 +11,14 @@
         <h1>Welcome to My App</h1>
     </header>
     <main>
-        <p>This is the main content of the app.</p>
+        <p>This is the list of the objects : {{ Item_list }}</p>
+        <ul>
+            {% for item in Item_list %}
+            
+            <li><a href="{% url 'myapp:details' item.id %}">
+                {{item.item_name}} -> {{item.item_desc}} -> {{item.item_price}} </li>
+             {% endfor %}
+        </ul>
+    
     </main>
-    <footer>
-        <p>&copy; 2024 My App</p>
-    </footer>
-</body>
+</body> 
