@@ -160,3 +160,11 @@ python manage.py shell
 >>> data = Items(item_name="Burger", item_desc="Veg Burger", item_price=8)
 >>> data.save()
 ```
+```bash
+Left to add the templates handWritten notes
+
+```
+
+
+
+'''
