@@ -1,17 +1,35 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% comment %} <link rel="stylesheet" href="{% static 'myapp/style.css' %}"> {% endcomment %}
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>My App</title>
     
 </head>
 <body>
     <header>
-        <h1>Welcome to My App</h1>
+        {% comment %} <h1>Welcome to My App</h1> {% endcomment %}
     </header>
     <main>
-        <p>This is the list of the objects : {{ Item_list }}</p>
+        {% comment %} < >This is the list of the objects : {{ Item_list }}</p> {% endcomment %}
+        <nav class=" bg-blue-600 py-5">
+            <div class="logo  flex justify-between ">
+                <a href='{}' class="font-bold text-2xl px-5 text-white"> Food App </a>
+            
+                <div class="px-5">
+                    <a href='{}'> Address </a>
+                    <a href='{}'> Contact </a>
+                    <a href='{}'> About Us</a>
+                </div>
+            </div>
+        </nav>
+            
+            <div>
+
         <ul>
             {% for item in Item_list %}
             
@@ -19,6 +37,7 @@
                 {{item.item_name}} -> {{item.item_desc}} -> {{item.item_price}} </li>
              {% endfor %}
         </ul>
+    </div>
     
     </main>
 </body> 
