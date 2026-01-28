@@ -1,5 +1,12 @@
-<ul>
+{% extends "myapp/base.html" %}
+
+{% block start %}
+<body>
+    <ul>
+
     <li>Item Name: {{ item.item_name }}</li>
     <li>Item Description: {{ item.item_desc }}</li>
     <li>Item Price: {{ item.item_price }}</li>
 </ul>
+
+{% endblock %}
