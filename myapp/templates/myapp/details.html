@@ -1,12 +1,19 @@
 {% extends "myapp/base.html" %}
 
 {% block start %}
-<body>
-    <ul>
 
-    <li>Item Name: {{ item.item_name }}</li>
-    <li>Item Description: {{ item.item_desc }}</li>
-    <li>Item Price: {{ item.item_price }}</li>
-</ul>
+<div class="m-9 flex">
+    <div> <img class = "w-128" src="{{item.item_image}}" alt=""></div>
+    <div class="m-10 space-y-5">
+        <div class='font-bold text-4xl'>Item Name: {{ item.item_name }}</div>
+        <div class='text-green-700 font-bold text-2xl'>Rs.{{ item.item_price }}</div>
+        <div class='font-semibold'>Item Description: {{ item.item_desc }}</div>
 
+        <div lass ="mt-10 pt-10">
+            <a class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-md" href="">Edit</a>
+            <a class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md" href="">Delete</a>
+        </div>
+    </div>
+</div>
+<body>    
 {% endblock %}
