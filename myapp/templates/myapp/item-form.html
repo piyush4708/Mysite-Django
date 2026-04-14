@@ -1,6 +1,6 @@
 {% extends 'myapp/base.html' %}
 
-{% block body %}
+{% block start %}
     <form method="POST">
         {% csrf_token  %}
         {{form}}

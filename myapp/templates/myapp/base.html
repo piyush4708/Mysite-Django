@@ -37,6 +37,14 @@
     </div>
 </nav>
 
+{%if messages}}
+    {% for message in messages %}
+        <div class="max-w-7xl mx-auto mt-4 px-6 py-3 bg-green-100 text-green-800 rounded">
+            {{message}}
+        </div>
+    {% endfor %}
+{{ endif }}
+
 <!-- Page Content -->
 <main class="min-h-screen">
     {% block start %}{% endblock %}

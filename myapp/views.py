@@ -34,3 +34,27 @@ def create_item(request):
         'form' : form
     }
     return render(request, 'myapp/item-form.html', context)
+
+
+def update_item(request, id):
+    Item = Items.objects.get(id=id)
+    form =ItemForm(request.POST or None , instance=Item)
+    if form.is_valid():
+        form.save()
+        return redirect('myapp:index')
+    
+    context = {
+        'form' : form
+    }
+    return render(request,'myapp/item-form.html' ,context)
+
+def delete_item(request, id):
+    Item = Items.objects.get(id=id)
+    if request.method == "POST":
+        Item.delete()
+        return redirect('myapp:index')
+    
+    context = {
+        'item' : Item
+    }
+    return render(request,'myapp/delete-item.html' ,context)
